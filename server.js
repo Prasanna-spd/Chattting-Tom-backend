@@ -2,6 +2,7 @@ require("dotenv").config();
 const cors = require("cors");
 const userRouter = require("./routes/user");
 const chatRouter = require("./routes/chat");
+const messageRouter = require("./routes/message");
 const express = require("express");
 const connect = require("./database/db");
 const { notFound, errorHandler } = require("./middlewares/errorHandler");
@@ -23,6 +24,7 @@ connect();
 
 app.use("/api/users", userRouter);
 app.use("/api/chats", chatRouter);
+app.use("/api/messages", messageRouter);
 app.get("/", (req, res) => {
   res.send("Hey WElcome to Chatting Tom");
 });

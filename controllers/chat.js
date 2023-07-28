@@ -8,7 +8,7 @@ const accessChat = asyncHandler(async (req, res) => {
   if (!userId) {
     console.log("UserId param not sent with request");
     return res.sendStatus(400).json({
-      message: "User not found",
+      message: "User not found try  again ",
     });
   }
 

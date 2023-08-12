@@ -62,7 +62,7 @@ io.on("connection", (socket) => {
     chat.users.forEach((user) => {
       if (user._id == newMessageRecieved.sender._id) return;
 
-      socket.in(user._id).emit("message recieved", newMessageRecieved);
+      socket.in(user._id).emit("message received", newMessageRecieved);
     });
   });
   // socket.off("setup", () => {
@@ -70,7 +70,7 @@ io.on("connection", (socket) => {
 
   // });
 
-  socket.on("disconnect", (userData) => {
+  socket.off("disconnect", (userData) => {
     console.log("USER DISCONNECTED");
     socket.leave(userData._id);
     // Handle any necessary cleanup or disconnection logic here

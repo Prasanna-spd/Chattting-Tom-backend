@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(
   cors({
     // origin: "http://localhost:3000", // Set the allowed origin
-    origin: "https://chatting-tom-frontend.vercel.app/", // Set the allowed origin
+    origin: "https://chatting-tom-frontend.vercel.app", // Set the allowed origin
     methods: ["GET", "POST", "PUT", "DELETE"], // Set the allowed HTTP methods
     allowedHeaders: ["Content-Type"], // Set the allowed headers
     credentials: true, // Allow cookies and authorization headers
@@ -41,7 +41,7 @@ const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
     // origin: "http://localhost:3000",
-    origin: "https://chatting-tom-frontend.vercel.app/",
+    origin: "https://chatting-tom-frontend.vercel.app",
   },
 });
 

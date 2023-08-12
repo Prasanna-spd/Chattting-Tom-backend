@@ -72,9 +72,13 @@ io.on("connection", (socket) => {
 
   // });
 
-  socket.off("disconnect", (userData) => {
+  // socket.off("disconnect", (userData) => {
+  //   console.log("USER DISCONNECTED");
+  //   socket.leave(userData._id);
+  //   // Handle any necessary cleanup or disconnection logic here
+  // });
+  socket.on("disconnect", () => {
     console.log("USER DISCONNECTED");
-    socket.leave(userData._id);
     // Handle any necessary cleanup or disconnection logic here
   });
 });
